@@ -9,15 +9,18 @@ class Client{
             Socket socket = new Socket("localhost", 5000);
             System.out.println("Server find!");
 
+            //TODO Посмотреть другой ввод вывод
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             DataInputStream in = new DataInputStream(socket.getInputStream());
 
-            while(!socket.isClosed()){
+            if(!socket.isClosed()) {
                 out.writeUTF("Give me message?");
                 out.flush();
                 String mes = in.readUTF();
                 System.out.println("Server answer: " + mes);
             }
+            socket.close();
+
         }catch (IOException e){
             e.printStackTrace();
         }

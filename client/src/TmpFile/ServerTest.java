@@ -1,10 +1,14 @@
+/* Сервер который шлет сообщения и принимает, с выводом в консоль
+    Больше ничего от него не надо
+* */
+package TmpFile;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-class Server{
+class ServerTest {
     public static void main(String args[]){
         try{
             System.out.println("Waiting any client");
