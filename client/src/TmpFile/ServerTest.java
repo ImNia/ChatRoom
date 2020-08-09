@@ -24,11 +24,11 @@ class ServerTest {
                 System.out.println("Message: " + mes);
                 out.writeUTF("OK");
                 out.flush();
-                try {
+                /*try {
                     Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }
+                }*/
             }
 
             client.close();

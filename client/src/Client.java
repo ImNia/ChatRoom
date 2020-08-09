@@ -1,7 +1,6 @@
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.lang.InterruptedException;
 
 class Client{
     public static void main(String arg[]){
@@ -9,15 +8,18 @@ class Client{
             Socket socket = new Socket("localhost", 5000);
             System.out.println("Server find!");
 
-            //TODO Посмотреть другой ввод вывод
-            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-            DataInputStream in = new DataInputStream(socket.getInputStream());
+            InPutMessage inPut = new InPutMessage("first");
+            OutPutMessage outPut = new OutPutMessage("second");
 
-            if(!socket.isClosed()) {
-                out.writeUTF("Give me message?");
-                out.flush();
-                String mes = in.readUTF();
-                System.out.println("Server answer: " + mes);
+            //TODO Посмотреть другой ввод вывод
+
+            inPut.ClientInput(socket);
+            outPut.ClientOutput(socket);
+
+            try{
+                Thread.sleep(50000);
+            }catch (InterruptedException exc){
+                System.out.println("Prervalcay");
             }
             socket.close();
 
