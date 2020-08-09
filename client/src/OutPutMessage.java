@@ -20,7 +20,7 @@ public class OutPutMessage extends Thread{
         try {
             Scanner tmp = new Scanner(System.in);
             String message;
-            if (!sockO.isClosed()) {
+            while (!sockO.isClosed()) {
                 message = tmp.nextLine();
                 out.writeUTF(message);
                 out.flush();

@@ -17,7 +17,7 @@ public class InPutMessage extends Thread{
 
     public void run() {
         try {
-            if (!sock.isClosed()) {
+            while (!sock.isClosed()) {
                 String message = in.readUTF();
                 System.out.println("Server answer: " + message);
             }
