@@ -1,3 +1,5 @@
+/* Считывает сообщение клиента и отправляет его серверу.
+* */
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;

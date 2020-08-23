@@ -1,3 +1,6 @@
+/* Получение сообщений от сервера.
+*    Отдельным потоком.
+* */
 import java.io.IOException;
 import java.io.DataInputStream;
 import java.net.Socket;
